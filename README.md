@@ -19,7 +19,7 @@ Install
 =======
 
 Weather.js works in the browser and node.js. Take your pick. For the
-browser, [download the most recent version on github][]. For use in
+browser, [download the most recent version on github][Weather.js]. For use in
 node, do the install thing.
 
 ```
@@ -52,6 +52,6 @@ Weather.getForecast("Kansas City", function(forecast) {
 
 
 [openweathermap.org]: http://openweathermap.org
-[download the most recent version off of github]: http://github.com/noazark/weather
+[Weather.js]: http://github.com/noazark/weather
 [Sugar.js]: http://sugarjs.com/
 [jQuery]: http://jquery.com/
