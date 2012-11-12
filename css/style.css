@@ -1,0 +1,193 @@
+@font-face {
+  font-family: 'MeteoconsRegular';
+  src: url('../font/meteocons-webfont.eot');
+  src: url('../font/meteocons-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../font/meteocons-webfont.woff') format('woff'),
+       url('../font/meteocons-webfont.ttf') format('truetype'),
+       url('../font/meteocons-webfont.svg#MeteoconsRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin-top: 0.5em;
+  background-color: #ADDFFF;
+  color: #454545;
+}
+
+pre {
+  white-space: pre;
+  word-wrap: normal;
+  overflow: auto;
+}
+
+pre.CodeMirror {
+  padding: 0;
+  height: inherit;
+}
+
+pre.CodeMirror * {
+  line-height: 1.5em
+}
+
+.CodeMirror-gutter {
+  height: inherit;
+  -webkit-border-radius: 3px 0 0 3px;
+  -moz-border-radius: 3px 0 0 3px;
+  border-radius: 3px 0 0 3px;
+}
+
+.CodeMirror-scroll {
+  height: inherit;
+}
+
+.navbar-inner {
+  background: white;
+}
+
+.weather {
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+.current h1 {
+  font-size: 6em;
+  line-height: 1em;
+  text-align: center;
+
+  color: #FFFFFF;
+  text-shadow: 0 0 20px #7CCCFF;
+}
+
+.current h1 .temperature {
+  margin-left: -0.8em;
+}
+
+.current h2 {
+  margin: 0;
+  margin-top: -1em;
+  
+  color: #FFFFFF;
+  text-align: center;
+  text-shadow: 0 0 20px #7CCCFF;
+}
+
+.forecast {
+  margin-top: 3em;
+}
+
+.forecast li {
+  margin-right: 1em;
+  display:inline-block;
+  vertical-align: middle;
+
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.forecast li h2 {
+  font-size: 1.2em;
+  text-transform: none;
+  opacity: 0.4;
+}
+
+.forecast li h2,
+.forecast li h3 {
+  margin: 0;
+  padding: 0;
+
+  line-height: 1.25em;
+}
+
+.forecast li h3.temperature-high {
+  font-size: 1.8em;
+}
+
+.forecast li h3.temperature-low {
+  font-size: 1em;
+}
+
+[class*="icon-weather"] {
+  display: inline-block;
+  vertical-align: middle;
+
+  color: #EFEFEF;
+  text-decoration: none;
+  font-style: normal;
+  font-size: 1.5em;
+}
+
+[class*="icon-weather"]:before {
+  font-family: 'MeteoconsRegular';
+}
+
+/* Thunderstorm */
+[class*="icon-weather-2"] {
+  color: #FF7A00;
+  text-shadow: 0 0 20px #FFBC90;
+}
+
+[class*="icon-weather-2"]:before {
+  content: "P";
+}
+
+/* Drizzle */
+[class*="icon-weather-3"] {
+  color: #949494;
+  text-shadow: 0 0 20px #7CCEDD;
+}
+
+[class*="icon-weather-3"]:before {
+  content: "Q";
+}
+
+/* Rain */
+[class*="icon-weather-5"] {
+  color: #949494;
+  text-shadow: 0 0 20px #7CCEDD;
+}
+
+[class*="icon-weather-5"]:before {
+  content: "R";
+}
+
+/* Snow */
+[class*="icon-weather-6"]:before {
+  content: "W";
+}
+
+/* Sleet */
+[class*="icon-weather-611"]:before {
+  content: "X";
+}
+
+/* Atmosphere */
+[class*="icon-weather-7"]:before {
+  content: "E";
+}
+
+/* Clouds */
+[class*="icon-weather-8"]:before {
+  content: "H";
+}
+
+/* Sunny */
+[class*="icon-weather-800"] {
+  color: #FFFF00;
+  text-shadow: 0 0 20px #FFFF99;
+}
+
+[class*="icon-weather-800"]:before {
+  content: "B";
+}
+
+/* Broken Clouds */
+[class*="icon-weather-803"]:before,
+[class*="icon-weather-804"]:before {
+  content: "Y";
+}
+
+/* Clouds */
+[class*="icon-weather-9"]:before {
+  content: "%";
+}

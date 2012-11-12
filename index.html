@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Weather.js</title>
+  <link rel="stylesheet" href="css/bootstrap.css" />
+  <link rel="stylesheet" href="css/font-awesome.css">
+  <link rel="stylesheet" href="css/codemirror.css">
+  <link rel="stylesheet" href="css/syntax.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/jquery.js"></script>
+  <script src="js/codemirror.js"></script>
+  <script src="js/codemirror-javascript.js"></script>
+  <script src="js/sugar.js"></script>
+  <script src="js/weather.js"></script>
+  <script src="js/application.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="navbar span6">
+        <div class="navbar-inner">
+          <div class="brand">Weather.js <small class="muted">v0.0.2</small></div>
+          <ul class="nav pull-right">
+            <li>
+              <a href="http://github.com/noazark/weather">
+                <i class="icon-github"></i>
+                download on github
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="weather current span3">
+        <h1>
+          <i class="icon"></i>
+          <span class="temperature"></span>
+        </h1>
+        <h2 class="conditions"></h2>
+      </div>
+      <ul class="weather forecast span3">
+        <li>
+          <h2 class="forecast-1-day"></h2>
+          <h3 class="forecast-1-high temperature-high"></h3>
+          <h3 class="forecast-1-low temperature-low"></h3>
+        </li>
+        <li>
+          <h2 class="forecast-2-day"></h2>
+          <h3 class="forecast-2-high temperature-high"></h3>
+          <h3 class="forecast-2-low temperature-low"></h3>
+        </li>
+        <li>
+          <h2 class="forecast-3-day">r</h2>
+          <h3 class="forecast-3-high temperature-high"></h3>
+          <h3 class="forecast-3-low temperature-low"></h3>
+        </li>
+        <li>
+          <h2 class="forecast-4-day"></h2>
+          <h3 class="forecast-4-high temperature-high"></h3>
+          <h3 class="forecast-4-low temperature-low"></h3>
+        </li>
+        <li>
+          <h2 class="forecast-5-day"></h2>
+          <h3 class="forecast-5-high temperature-high"></h3>
+          <h3 class="forecast-5-low temperature-low"></h3>
+        </li>
+      </ul>
+    </div>
+    <div class="row">
+      <div class="span6">
+        <h1>About</h1>
+        <p>
+          There really should be a conclusive Javascript weather library.
+          Weather.js fetches data from
+          <a href="http://openweathermap.org">openweathermap.org</a> (no
+          affiliation). Since other providers format their output differently,
+          currently this is the only source provider.
+        </p>
+        <p>
+          Weather.js is still in early development so expect changes and please
+          contribute! Among the features I hope to incorporate:
+
+          <ul>
+            <li>historical weather information</li>
+            <li>API key usage</li>
+            <li>more data sources</li>
+            <li>more conversions!</li>
+          </ul>
+        </p>
+
+        <h1>Install</h1>
+        <p>
+          Weather.js works in the browser and node.js. Take your pick. For the
+          browser, <a href="http://github.com/noazark/weather">download the most
+          recent version on github</a>. For use in node, do the install thing.
+        </p>
+        <pre class="prettyprint cm-s-solarized-light">
+npm install -g weather.js</pre>
+
+        <p class="alert alert-error">
+          <strong>Important!</strong> In the browser
+          you will need to also include
+          <a href="http://sugarjs.com/">Sugar.js</a> and
+          <a href="http://jquery.com/">jQuery</a>. I will try to remove these
+          dependancies as soon as possible.
+        </p>
+
+        <h1>Usage</h1>
+        <p>
+          At the moment you can access the current weather conditions and the
+          forecast for any city. By default it will use the closest match as
+          returned by Open Weather Map.
+        </p>
+<pre class="prettyprint cm-s-solarized-light">
+Weather.getCurrent("Kansas City", function(current) {
+  console.log(
+    ["currently:",current.temperature(),"and",current.conditions()].join(" ")
+  );
+});
+
+Weather.getForecast("Kansas City", function(forecast) {
+  console.log("forecast high: " + forecast.high());
+  console.log("forecast low: " + forecast.low());
+});
+</pre>
+      </div>
+      <script>
+        $(function() {
+          Weather.getCurrent("Kansas City", function(current) {
+            console.log(
+              ["currently:",current.temperature(),"and",current.conditions()].join(" ")
+            );
+          });
+
+          Weather.getForecast("Kansas City", function(forecast) {
+            console.log("forecast high: " + forecast.high());
+            console.log("forecast low: " + forecast.low());
+          });
+        })
+      </script>
+    </div>
+
+    <footer class="row">
+      <small class="copyright span6">
+        Copyright &copy; Noah H. Smith 2012.
+        <a href="https://github.com/noazark/weatherjs.com">
+          This page is available on Github.
+        </a>
+      </small>
+    </footer>
+  </div>
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-33559850-2']);
+    _gaq.push(['_setDomainName', 'weatherjs.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</body>
+</html>
