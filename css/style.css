@@ -77,7 +77,7 @@ pre.CodeMirror * {
 }
 
 .forecast li {
-  margin-right: 1em;
+  margin-right: 0.75em;
   display:inline-block;
   vertical-align: middle;
 
